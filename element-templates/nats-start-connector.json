@@ -1,0 +1,105 @@
+{
+  "$schema": "https://unpkg.com/@camunda/zeebe-element-templates-json-schema/resources/schema.json",
+  "name": "NATS Start Connector",
+  "id": "io.camunda.connectors.InboundNATS.start",
+  "version": 1,
+  "description": "Listen for events on NATS topic and start process when event arrives",
+  "category": {
+    "id": "connectors",
+    "name": "Connectors"
+  },
+  "appliesTo": [
+    "bpmn:StartEvent"
+  ],
+  "elementType": {
+    "value": "bpmn:StartEvent"
+  },
+  "groups": [
+    {
+      "id": "config",
+      "label": "Connector Configuration"
+    },
+    {
+      "id": "output",
+      "label": "Output"
+    }
+  ],
+  "properties": [
+    {
+      "type": "Hidden",
+      "value": "io.camunda:natsinbound:1",
+      "binding": {
+        "type": "zeebe:property",
+        "name": "inbound.type"
+      }
+    },
+    {
+      "type": "String",
+      "label": "NATS Url",
+      "feel": "optional",
+      "group": "config",
+      "description": "Url of NATS server",
+      "value": "",
+      "binding": {
+        "type": "zeebe:property",
+        "name": "url"
+      },
+      "constraints": {
+        "notEmpty": true
+      }
+    },
+    {
+      "type": "String",
+      "label": "Topic",
+      "feel": "optional",
+      "group": "config",
+      "description": "Topic",
+      "value": "",
+      "binding": {
+        "type": "zeebe:property",
+        "name": "topic"
+      },
+      "constraints": {
+        "notEmpty": true
+      }
+    },
+    {
+      "type": "String",
+      "label": "Polling interval in seconds",
+      "feel": "optional",
+      "group": "config",
+      "description": "Long polling interval",
+      "value": "",
+      "binding": {
+        "type": "zeebe:property",
+        "name": "pollingInterval"
+      },
+      "constraints": {
+        "notEmpty": true
+      }
+    },
+    {
+      "label": "Message variable",
+      "type": "String",
+      "group": "output",
+      "optional": true,
+      "binding": {
+        "type": "zeebe:property",
+        "name": "resultVariable"
+      },
+      "description": "Name of variable to store the contents of the inbound message"
+    },
+    {
+      "label": "Variable expression",
+      "type": "String",
+      "group": "output",
+      "feel": "required",
+      "optional": true,
+      "binding": {
+        "type": "zeebe:property",
+        "name": "resultExpression"
+      },
+      "description": "Expression to map elements of the inbound message to process variables"
+    }
+  ]
+}
