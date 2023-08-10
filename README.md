@@ -6,7 +6,7 @@
 
 !!! Work in progress !!!
 
-A starting point to build a Start and Intermediate an Inbound NATS Connector. Send messages to topics on NATS and have process instances start or catch intermediate events. Feedback and PRs are welcome! In the Connector you'll need to provide the URL of the NATS server, the topic to listen to, and the long polling interval in seconds.
+A starting point to build a Start and Intermediate Inbound NATS Connector. Send messages to topics on NATS and have process instances start or catch intermediate events. Feedback and PRs are welcome! In the Connector you'll need to provide the URL of the NATS server, the topic to listen to, and the long polling interval in seconds.
 
 There are three outputs and can be accessed from the ```event``` object:
 ```event.url```,
