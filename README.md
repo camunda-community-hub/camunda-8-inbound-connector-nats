@@ -13,7 +13,7 @@ There are three outputs and can be accessed from the ```event``` object:
 ```event.topic```,
 ```event.message```
 
-In most cases you'll be most interested in ```event.message```. If the message is sent in a JSON string you'll be able to access data within the object using dot notation.
+In most cases you'll be interested in ```event.message```. If the message is sent in a JSON string you'll be able to access data within the object using dot notation.
 
 ![Example](./img/sample.png)
 
