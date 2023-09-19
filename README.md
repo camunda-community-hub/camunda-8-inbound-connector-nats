@@ -55,7 +55,7 @@ This Connector can be configured with the following properties:
 | Polling interval                                         | Long polling interval in seconds               | `60`                                  |
 | Correlation key (process) - for intermediate catch event | Process variable to correlate incoming message | `processCorrelationKey`               |
 | Correlation key (payload) - for intermediate catch event | Correlation key in incoming message            | `event.message.messageCorrelationKey` |
-| Activation condition      - for intermediate catch event | Condition under which the Connector triggers   | `event.aVariable = 'ok'`              |
+| Activation condition      - for intermediate catch event | Condition under which the Connector triggers   | `event.message.aVariable = 'ok'`      |
 
 ### Output
 
